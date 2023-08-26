@@ -1,0 +1,24 @@
+name: Run Tests
+on:
+  push:
+    branches:
+      - master
+  pull_requests:
+    type:
+      - opened
+
+jobs:
+  
+    test:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/checkout@v3
+        - name: Set up python
+          with:
+            python-version: 3.11
+
+        - name: Install dependencies
+          run: pip install -r requirements.txt
+        - name: run test
+          run: python -m pytest
+
