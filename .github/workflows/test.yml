@@ -3,22 +3,20 @@ on:
   push:
     branches:
       - main
-  pull_requests:
-    type:
+  pull_request:
+    types:
       - opened
 
 jobs:
-  
     test:
       runs-on: ubuntu-latest
       steps:
         - uses: actions/checkout@v3
         - name: Set up python
+          uses: actions/setup-python@v4
           with:
             python-version: 3.11
-
         - name: Install dependencies
           run: pip install -r requirements.txt
         - name: run test
           run: python -m pytest
-
