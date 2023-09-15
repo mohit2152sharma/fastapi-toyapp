@@ -1,4 +1,4 @@
-# preqin-assignment
+# fastapi-example
 
 
 ## Problem Statement
@@ -67,7 +67,4 @@ In the webserver, I have implemented some basic security, a user needs to be aut
 
 The repo also include some tests, this is to ensure that we don't introduce any breaking changes. 
 
-I have also included a pipeline which runs the test automatically on a new pull request and whenever the code is merged to `main` branch. The pipeline doesn't have a deployment component, but this can be added depending which cloud is choosen to run the web server. Irrespective of the cloud the deployment flow would be as follows:
-- Package the code (preferably in a docker image)
-- Push the image to a container register like AWS ECR
-- Run the container in your cluster (the cluster should be configured to use the latest image on every push to `main` branch)
+I have also included a pipeline which runs the test automatically on a new pull request and whenever the code is merged to `main` branch.
